@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  imgParent = 'https://www.w3schools.com/howto/img_avatar.png';
+  // imgParent = 'https://www.w3schools.com/howto/img_avatar.png';
+  imgParent= '';
+
+  onLoaded(img: string){
+    console.log('log padre',img);
+  }
 }
