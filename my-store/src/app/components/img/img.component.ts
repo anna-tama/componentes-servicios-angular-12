@@ -10,6 +10,7 @@ export class ImgComponent implements OnInit, OnChanges,AfterViewInit,OnDestroy {
   @Input() img: string = ''; //el padre lo comunica al hijo
   @Output() loaded = new EventEmitter<string>(); //comunica del hijo al padre
   imageDefault  = '../../../assets/images/default.png';
+  counter = 0;
 
   constructor() {
     //before render
@@ -26,9 +27,12 @@ export class ImgComponent implements OnInit, OnChanges,AfterViewInit,OnDestroy {
   ngOnInit(): void {
     //before render
     //async fetch, llamadas a las apis -
-    console.log('ngOnInit', 'imgValue =>', this.img)
+    console.log('ngOnInit', 'imgValue =>', this.img);
+    window.setInterval(()=>{
+      this.counter+=1;
+      console.log('run counter')
+    },1000)
   }
-
   ngAfterViewInit(){
     //after render
     //handler children
