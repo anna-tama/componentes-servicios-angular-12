@@ -17,6 +17,9 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  myShoppingCart: Product[] = [];
+  total: number = 0;
+
   products: Product[] = [{
       id: '1',
       name: 'Juguete',
@@ -48,5 +51,11 @@ export class ProductsComponent implements OnInit {
       image: './assets/images/books.jpg'
     }
   ]
+
+  onAddToShoppingCart(product: Product){
+    this.myShoppingCart.push(product);
+    this.total = this.myShoppingCart.reduce((sum,item) =>  sum +item.price,0   )
+    // console.log(product); //imprimo el valor que me manda desde el componente hijo product
+  }
 
 }
