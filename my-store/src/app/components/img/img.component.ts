@@ -21,8 +21,8 @@ export class ImgComponent implements OnInit, OnChanges,AfterViewInit,OnDestroy {
 
   @Output() loaded = new EventEmitter<string>(); //comunica del hijo al padre
   imageDefault  = '../../../assets/images/default.png';
-  counter = 0;
-  counterFn: number | undefined;
+  // counter = 0;
+  // counterFn: number | undefined;
 
   constructor() {
     //before render
@@ -41,10 +41,10 @@ export class ImgComponent implements OnInit, OnChanges,AfterViewInit,OnDestroy {
     //before render
     //async fetch, llamadas a las apis -
     // console.log('ngOnInit', 'imgValue =>', this.img);
-   this.counterFn= window.setInterval(()=>{ //cuando creo el set interval
-      this.counter += 1;
-      console.log('run counter')
-    },1000)
+  //  this.counterFn= window.setInterval(()=>{ //cuando creo el set interval
+  //     this.counter += 1;
+  //     console.log('run counter')
+  //   },1000)
   }
   ngAfterViewInit(){
     //after render
@@ -56,7 +56,7 @@ export class ImgComponent implements OnInit, OnChanges,AfterViewInit,OnDestroy {
     //delete
     // console.log('ngOnDestroy', 'imgValue =>', this.img)
     //limpio el evento para que no quede ejecutando en 2do plano
-    window.clearInterval(this.counterFn);
+    // window.clearInterval(this.counterFn);
   }
 
 
